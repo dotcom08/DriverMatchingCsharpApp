@@ -21,6 +21,7 @@ namespace DriverMatching.Tests
             _drivers = new List<Driver>();
             _order = new Order { PickupLocation = new Location(5, 5) };
         }
+        
 
         [Test]
         public void FindNearestDrivers_WithPriorityQueue_ReturnsSortedResults()
