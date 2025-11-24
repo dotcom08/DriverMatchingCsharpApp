@@ -16,6 +16,9 @@ namespace DriverMatching.Core.Services
         {
             // Регистрируем алгоритмы
             RegisterMatcher(new LinearSearchMatcher());
+            RegisterMatcher(new GridSearchMatcher());
+            RegisterMatcher(new KDTreeMatcher());
+            RegisterMatcher(new PriorityQueueMatcher());
         }
 
         public void RegisterMatcher(IDriverMatcher matcher)
