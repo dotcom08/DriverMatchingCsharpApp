@@ -28,14 +28,10 @@ dotnet test src/DriverMatching.Tests/
 
 ## Benchmark Results
 
-### Производительность на различных размерах данных
+The following benchmark results compare the performance of all four search algorithms across different dataset sizes:
 
-| Algorithm | 100 drivers | 1,000 drivers | 10,000 drivers | 100,000 drivers |
-|-----------|-------------|---------------|----------------|-----------------|
-| Linear Search | ~0.1 ms | ~1.2 ms | ~15 ms | ~200 ms |
-| Grid Search | ~0.05 ms | ~0.3 ms | ~2 ms | ~25 ms |
-| KD-Tree | ~0.2 ms | ~0.4 ms | ~0.8 ms | ~1.5 ms |
-| Priority Queue | ~0.08 ms | ~0.9 ms | ~12 ms | ~150 ms |
+![Benchmark Results](/src/images/image1.png)
+![Benchmark Results](/srcimages/image2.png)
 
 ### Использование памяти
 
