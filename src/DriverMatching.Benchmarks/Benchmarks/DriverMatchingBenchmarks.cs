@@ -1,29 +1,13 @@
-<<<<<<< HEAD
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-=======
->>>>>>> feature/benchmark-tests
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using DriverMatching.Core.Algorithms;
 using DriverMatching.Core.Models;
 
-<<<<<<< HEAD
-
-namespace DriverMatching.Benchmarks.Benchmarks
-{
-    [MemoryDiagnoser]
-    [SimpleJob(RuntimeMoniker.Net60)]
-    [RankColumn]
-=======
 namespace DriverMatching.Benchmarks.Benchmarks
 {
     [MemoryDiagnoser]
     [RankColumn]
     [Config(typeof(BenchmarkConfig))]
->>>>>>> feature/benchmark-tests
     public class DriverMatchingBenchmarks
     {
         private List<Driver> _smallDrivers = null!;
