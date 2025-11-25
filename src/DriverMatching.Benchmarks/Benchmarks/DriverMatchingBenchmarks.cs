@@ -1,18 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using DriverMatching.Core.Algorithms;
 using DriverMatching.Core.Models;
 
-
 namespace DriverMatching.Benchmarks.Benchmarks
 {
     [MemoryDiagnoser]
-    [SimpleJob(RuntimeMoniker.Net60)]
     [RankColumn]
+    [Config(typeof(BenchmarkConfig))]
     public class DriverMatchingBenchmarks
     {
         private List<Driver> _smallDrivers = null!;

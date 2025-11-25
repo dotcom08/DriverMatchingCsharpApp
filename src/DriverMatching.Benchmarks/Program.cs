@@ -17,11 +17,13 @@ namespace DriverMatching.Benchmarks
             Console.WriteLine("4. All benchmarks");
             Console.WriteLine();
 
+             var config = new BenchmarkConfig();
+
             if (args.Length > 0)
             {
                 // Run specific benchmark from command line
                 var benchmarkType = args[0];
-                RunSpecificBenchmark(benchmarkType);
+                RunSpecificBenchmark(benchmarkType, config);
             }
             else
             {
@@ -32,17 +34,17 @@ namespace DriverMatching.Benchmarks
                 switch (input)
                 {
                     case "1":
-                        RunDriverMatchingBenchmarks();
+                        RunDriverMatchingBenchmarks(config);
                         break;
                     case "2":
-                        RunAlgorithmComparisonBenchmarks();
+                        RunAlgorithmComparisonBenchmarks(config);
                         break;
                     case "3":
-                        RunMemoryUsageBenchmarks();
+                        RunMemoryUsageBenchmarks(config);
                         break;
                     case "4":
                     default:
-                        RunAllBenchmarks();
+                        RunAllBenchmarks(config);
                         break;
                 }
             }
@@ -50,51 +52,50 @@ namespace DriverMatching.Benchmarks
             Console.WriteLine("Benchmarks completed!");
         }
 
-        private static void RunSpecificBenchmark(string benchmarkType)
+        private static void RunSpecificBenchmark(string benchmarkType, IConfig config)
         {
             switch (benchmarkType.ToLower())
             {
                 case "basic":
                 case "1":
-                    RunDriverMatchingBenchmarks();
+                    RunDriverMatchingBenchmarks(config);
                     break;
                 case "comparison":
                 case "2":
-                    RunAlgorithmComparisonBenchmarks();
+                    RunAlgorithmComparisonBenchmarks(config);
                     break;
                 case "memory":
                 case "3":
-                    RunMemoryUsageBenchmarks();
+                    RunMemoryUsageBenchmarks(config);
                     break;
                 default:
-                    RunAllBenchmarks();
+                    RunAllBenchmarks(config);
                     break;
             }
         }
 
-        private static void RunDriverMatchingBenchmarks()
+        private static void RunDriverMatchingBenchmarks(IConfig config)
         {
             Console.WriteLine("Running DriverMatchingBenchmarks...");
             BenchmarkRunner.Run<DriverMatchingBenchmarks>();
         }
 
-        private static void RunAlgorithmComparisonBenchmarks()
+        private static void RunAlgorithmComparisonBenchmarks(IConfig config)
         {
             Console.WriteLine("Running AlgorithmComparisonBenchmarks...");
             BenchmarkRunner.Run<AlgorithmComparisonBenchmarks>();
         }
 
-        private static void RunMemoryUsageBenchmarks()
+        private static void RunMemoryUsageBenchmarks(IConfig config)
         {
             Console.WriteLine("Running MemoryUsageBenchmarks...");
             BenchmarkRunner.Run<MemoryUsageBenchmarks>();
         }
 
-        private static void RunAllBenchmarks()
+        private static void RunAllBenchmarks(IConfig config)
         {
             Console.WriteLine("Running all benchmarks...");
             
-            var config = DefaultConfig.Instance;
             
             BenchmarkRunner.Run<DriverMatchingBenchmarks>(config);
             BenchmarkRunner.Run<AlgorithmComparisonBenchmarks>(config);

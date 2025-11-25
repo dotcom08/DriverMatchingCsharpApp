@@ -8,8 +8,8 @@ namespace DriverMatching.Benchmarks.Benchmarks
 {
 
     [MemoryDiagnoser]
-    [SimpleJob(RuntimeMoniker.Net60)]
     [RankColumn]
+    [Config(typeof(BenchmarkConfig))]
     public class AlgorithmComparisonBenchmarks
     {
         private List<Driver> _drivers = null!;

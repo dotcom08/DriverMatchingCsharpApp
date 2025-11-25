@@ -1,12 +1,11 @@
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Jobs;
 using DriverMatching.Core.Algorithms;
 using DriverMatching.Core.Models;
 
 namespace DriverMatching.Benchmarks.Benchmarks
 {
-[MemoryDiagnoser]
-    [SimpleJob(RuntimeMoniker.Net60)]
+    [MemoryDiagnoser]
+    [Config(typeof(BenchmarkConfig))]
     public class MemoryUsageBenchmarks
     {
         private List<Driver> _drivers = null!;
