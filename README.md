@@ -31,7 +31,7 @@ dotnet test src/DriverMatching.Tests/
 The following benchmark results compare the performance of all four search algorithms across different dataset sizes:
 
 ![Benchmark Results](/src/images/image1.png)
-![Benchmark Results](/srcimages/image2.png)
+![Benchmark Results](/src/images/image2.png)
 
 ### Использование памяти
 
